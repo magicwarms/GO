@@ -15,10 +15,10 @@ func main() {
 	fmt.Println("a itu", a, "dan b itu", b)
 
 	c := a && b
-	fmt.Println("kalau a nya true DAN b nya false, c nya jadi apa hayo ", c)
+	fmt.Println("kalau a nya true DAN b nya false, c nya jadi apa hayo", c)
 
 	d := a || b
-	fmt.Println("kalau a nya true ATAU b nya false, d nya jadi apa hayo ", d)
+	fmt.Println("kalau a nya true ATAU b nya false, d nya jadi apa hayo", d)
 
 	e := 65
 	fmt.Printf("type nya apa si e ini %T dan size nya adalah %d\n", e, unsafe.Sizeof(a))
@@ -29,6 +29,11 @@ func main() {
 	tambah := f + g
 	kurang := f - g
 	fmt.Println("penjumlahan:", tambah, "pengurangan:", kurang)
+
+	var positiveNumber uint8 = 234
+	var negativeNumber int16 = -234
+
+	fmt.Println("ini positif number", positiveNumber, "ini negatif number", negativeNumber)
 
 	//merge string
 	first := "Andhana"
