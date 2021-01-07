@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 )
 
 func calculateNumber() int {
@@ -11,7 +10,7 @@ func calculateNumber() int {
 }
 
 func main() {
-	// finger := 14
+	// finger := 4
 	// fmt.Println("Finger is:", finger)
 	// switch finger {
 	// case 1:
@@ -53,33 +52,41 @@ func main() {
 
 	//fallthrough
 	//jadi fallthrough ini akan eksekusi kondisi dibawah nya juga jika kondisi diatas terpenuhi
-	switch num := calculateNumber(); {
-	case num < 50:
-		if num < 0 {
-			break //boleh break di switch case
-		}
-		fmt.Printf("%d is lesser than 50\n", num)
-		// fallthrough //dan ini mesti di terakhir
-	case num < 100:
-		fmt.Printf("%d is lesser than 100\n", num)
-		// fallthrough
-	case num < 200:
-		fmt.Printf("%d is lesser than 200", num)
-		// fallthrough //gak boleh taruh di akhir case wak nanti error
-	}
+	// switch num := calculateNumber(); {
+	// case num < 50:
+	// 	if num < 0 {
+	// 		break //boleh break di switch case
+	// 	}
+	// 	fmt.Printf("%d is lesser than 50\n", num)
+	// 	fallthrough //dan ini mesti di akhir case
+	// case num < 100:
+	// 	fmt.Printf("%d is lesser than 100\n", num)
+	// 	// fallthrough
+	// case num < 200:
+	// 	fmt.Printf("%d is lesser than 200", num)
+	// 	// fallthrough //gak boleh taruh di akhir case wak nanti error
+	// }
 
-	//jadi fallthrough ini akan selalu eksekusi code dibawah nya walaupun kondisi nya itu salah/false
+	//jadi fallthrough ini akan selalu eksekusi code dibawah nya walaupun kondisi nya itu false/true
 	//hati-hati pakai fallthrough ini, kalo bisa hindari pakai nya
-
-randloop:
-	for {
-		i := rand.Intn(100)
-		fmt.Println(i)
-		switch {
-		case i%2 == 0:
-			fmt.Println("Ini genap loh", i)
-			break randloop
-		}
+	nilai := 19
+	switch {
+	case nilai < 18:
+		fmt.Println("Anda masih", nilai, "tahun dan anda tidak diperbolehkan masuk")
+	case nilai >= 18 && nilai <= 20:
+		fmt.Println("Anda sudah", nilai, "tahun dan anda diperbolehkan masuk")
+	default:
+		fmt.Println("Anda sudah tua cuk!")
 	}
+	// randloop:
+	// 	for {
+	// 		i := rand.Intn(100)
+	// 		fmt.Println(i)
+	// 		switch {
+	// 		case i%2 == 0:
+	// 			fmt.Println("Ini genap loh", i)
+	// 			break randloop
+	// 		}
+	// 	}
 
 }
