@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	// // variable yang ada di dalam loop gak bisa dipakai di luar loop
+	// variable yang ada di dalam loop gak bisa dipakai di luar loop
 	// for i := 1; i <= 10; i++ {
 	// 	if i > 5 {
 	// 		break // untuk break looping

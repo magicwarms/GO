@@ -168,14 +168,14 @@ func main() {
 	// fmt.Println("slice after function call", nos) // modifications are visible outside
 
 	// learn slices again
-	fruits := []string{"Apel", "Jeruk", "Semangka", "Pisang"}
+	// fruits := []string{"Apel", "Jeruk", "Semangka", "Pisang"}
 	// fmt.Println(len(fruits))
 	// fmt.Println(cap(fruits))
 
-	fruitsA := fruits[1:4]
-	fmt.Println(fruitsA)      // [Jeruk Semangka]
-	fmt.Println(len(fruitsA)) // 2
-	fmt.Println(cap(fruitsA)) // 3
+	// fruitsA := fruits[1:4]
+	// fmt.Println(fruitsA)      // [Jeruk Semangka]
+	// fmt.Println(len(fruitsA)) // 2
+	// fmt.Println(cap(fruitsA)) // 3
 
 	// learn copy slices
 	// dst := []string{"potato", "potato", "potato"}
@@ -185,4 +185,19 @@ func main() {
 	// fmt.Println(dst) // watermelon pinnaple potato
 	// fmt.Println(src) // watermelon pinnaple
 	// fmt.Println(n)   // 2
+
+	// lala := []string{} // deklarasi variabel array
+	// fmt.Println(len(lala))
+
+	colors := []string{"green", "red", "yellow"}
+	// ini loop array pakai for
+	// for i := 0; i < len(colors); i++ {
+	// 	item := colors[i]
+	// 	println("ini nomor:", i, "value:", item)
+	// }
+
+	// ini loop array pakai for-range
+	for _, color := range colors {
+		println("value:", color)
+	}
 }
