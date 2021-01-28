@@ -111,7 +111,7 @@ func main() {
 
 	// slices in Go Lang
 	// ngambil data tertentu di sebuah array
-	// kalo code nya gini [] itu berarti slice, kalo array ada isi nya [4/...] itu array
+	// kalo code nya gini [] itu berarti slice, kalo array ada isi nya [...] itu array
 	// a := [5]int{76, 77, 78, 79, 80}
 	// var b []int = a[1:4] //creates a slice from a[1] to a[3]
 	// fmt.Println(b)
@@ -178,18 +178,21 @@ func main() {
 	// fmt.Println(cap(fruitsA)) // 3
 
 	// learn copy slices
-	// dst := []string{"potato", "potato", "potato"}
-	// src := []string{"watermelon", "pinnaple"}
-	// n := copy(dst, src)
+	dst := []string{"potato", "potato", "potato"}
+	src := []string{"watermelon", "pinnaple", "orange", "banana"}
+	dst = append(dst, "kiwi")
+	n := copy(dst, src)
 
-	// fmt.Println(dst) // watermelon pinnaple potato
-	// fmt.Println(src) // watermelon pinnaple
-	// fmt.Println(n)   // 2
+	fmt.Println(dst) // watermelon pinnaple potato
+	fmt.Println(src) // watermelon pinnaple
+	fmt.Println(n)   // 2
 
 	// lala := []string{} // deklarasi variabel array
 	// fmt.Println(len(lala))
 
-	colors := []string{"green", "red", "yellow"}
+	// colorsArray := [...]string{"green", "red", "yellow"}
+	// fruitsSlice := []string{"apple", "grape", "banana", "melon"}
+	// newFruits := fruitsSlice[0:3]
 	// ini loop array pakai for
 	// for i := 0; i < len(colors); i++ {
 	// 	item := colors[i]
@@ -197,7 +200,13 @@ func main() {
 	// }
 
 	// ini loop array pakai for-range
-	for _, color := range colors {
-		println("value:", color)
-	}
+	// for i, color := range colors {
+	// 	println("ini nomor:", i, "value:", item)
+	// }
+	// fmt.Println(fruitsSlice)
+	// fmt.Println(newFruits)
+	// newFruits[2] = "orange"
+
+	// fmt.Println(newFruits)
+	// fmt.Println(fruitsSlice)
 }

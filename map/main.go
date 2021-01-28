@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	// var month map[string]int
 	// month = map[string]int{}
+	// fmt.Println("ini month", len(month))
 	// Zero value dari map adalah nil, maka tiap variabel bertipe map harus di-inisialisasi secara explisit nilai awalnya (agar tidak nil).
 
 	// var data map[string]int
@@ -16,9 +17,9 @@ func main() {
 	// tidak ada error
 
 	// month["January"] = 01
-	// month["November"] = 02
-	// Pengisian data pada map bersifat overwrite
-	// month["November"] = 04
+	// month["November"] = 11
+	// // Pengisian data pada map bersifat overwrite
+	// month["November"] = 12
 	// fmt.Println("Bulan pertama apa:", month["January"])
 	// fmt.Println("Bulan kesebelas apa:", month["November"])
 
