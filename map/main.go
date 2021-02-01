@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	// var month map[string]int
 	// month = map[string]int{}
@@ -79,12 +77,12 @@ func main() {
 	// 	map[string]string{"name": "chicken yellow", "gender": "female"},
 	// }
 	// Jika menggunakan versi go terbaru, cara deklarasi slice-map bisa dipersingkat, tipe tiap elemen tidak wajib untuk dituliskan
-	var chickens = []map[string]string{
-		{"name": "chicken blue", "gender": "male", "address": "Tiban sih"},
-		{"name": "chicken red", "gender": "male", "address": "Tiban Loh"},
-		{"name": "chicken yellow", "gender": "female"},
-	}
-	for _, chicken := range chickens {
-		fmt.Println(chicken["gender"], chicken["name"], chicken["address"])
-	}
+	// var chickens = []map[string]string{
+	// 	{"name": "chicken blue", "gender": "male", "address": "Tiban sih"},
+	// 	{"name": "chicken red", "gender": "male", "address": "Tiban Loh"},
+	// 	{"name": "chicken yellow", "gender": "female"},
+	// }
+	// for _, chicken := range chickens {
+	// 	fmt.Println(chicken["gender"], chicken["name"], chicken["address"])
+	// }
 }
