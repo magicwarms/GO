@@ -4,6 +4,17 @@ import (
 	"fmt"
 )
 
+var StudentInit = struct {
+	Name  string
+	Grade int
+}{}
+
+func init() {
+	StudentInit.Name = "Sempardak"
+	StudentInit.Grade = 10
+	fmt.Println("Library imported niih ------>")
+}
+
 // SayHello <--- harus kayak gini kalo mau comment EXPORTED function
 // function ini EXPORTED(bisa di export di luar file ini) karna diawali dengan huruf besar
 func SayHello(name string) {
