@@ -14,11 +14,13 @@ func massivePrint(till int, message string) {
 func main() {
 	// Fungsi ini digunakan untuk menentukan
 	// jumlah core atau processor yang digunakan dalam eksekusi program.
-	runtime.GOMAXPROCS(2)
+	runtime.GOMAXPROCS(4)
 	// Pembuatan goroutine baru ditandai dengan keyword go.
 	go massivePrint(5, "mamak")
 	massivePrint(5, "bapak")
 
 	var input string
 	fmt.Scanln(&input)
+
+	fmt.Println(input)
 }

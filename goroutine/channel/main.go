@@ -6,26 +6,25 @@ import (
 )
 
 func main() {
-	runtime.GOMAXPROCS(2)
+	runtime.GOMAXPROCS(4)
 	// Cara pembuatan channel yaitu dengan menuliskan keyword 'make'
 	// dengan isi keyword 'chan' diikuti dengan tipe data channel yang diinginkan.
-	// var messages = make(chan int)
+	// var messages = make(chan string) // <-- ini buat channel baru nya
 
 	// Buffered Channel
 	// Pada kode di dibawah, parameter kedua fungsi make() adalah representasi jumlah buffer.
 	// Perlu diperhatikan bahwa nilai
-	// buffered channel dimulai dari 0. Ketika nilainya adalah 2 brarti
-	// jumlah buffer maksimal ada 3.
-	var messages = make(chan int, 1)
+	// buffered channel dimulai dari 0. Ketika nilainya adalah 2 brarti jumlah buffer maksimal ada 3.
+	var messages = make(chan int, 3)
 
 	// var sayHelloTo = func(who string) {
-	// var data = fmt.Sprintf("hello %s", who)
-	// messages <- data
+	// 	var data = fmt.Sprintf("hello %s", who)
+	// 	messages <- data
 	// }
 
-	// go sayHelloTo("1 john wick")
-	// go sayHelloTo("2 ethan hunt")
-	// go sayHelloTo("3 jason bourne")
+	// go sayHelloTo("john wick")
+	// go sayHelloTo("ethan hunt")
+	// go sayHelloTo("jason bourne")
 
 	// var message1 = <-messages
 	// fmt.Println(message1)
@@ -47,26 +46,26 @@ func main() {
 	// 	// panggil function closure diatas lalu assign ke variable messages
 	// 	go assignName(val)
 	// }
-	// // lalu looping data nya
-	// // jadi yang aku lakuin ini adalah channel sebagai tipe data parameter
+	// lalu looping data nya
+	// jadi yang aku lakuin ini adalah channel sebagai tipe data parameter
 	// for i := 0; i < len(names); i++ {
 	// 	sayHelloTo(messages)
 	// }
 
-	for i := 1; i <= 10; i++ {
+	for i := 1; i <= 5; i++ {
 		fmt.Println("send data:", i)
 		messages <- i
 		go receiveData(messages)
 	}
-	// dikasih gini supaya proses nya bener2 selesai
-	var input string
-	fmt.Scanln(&input)
+	// // dikasih gini supaya proses nya bener2 selesai
+	// var input string
+	// fmt.Scanln(&input)
 }
 
-func receiveData(rv chan int) {
-	fmt.Println("receive data:", <-rv)
+func receiveData(receive chan int) {
+	fmt.Println("receive data:", <-receive)
 }
 
 func sayHelloTo(who chan string) {
-	fmt.Println("hello", <-who)
+	fmt.Println("hello wak", <-who)
 }
