@@ -4,6 +4,7 @@ import "fmt"
 import "time"
 
 func main() {
-	time1 := time.Now()
-	fmt.Println(time1)
+	timeNow := time.Now()
+	fmt.Println(timeNow)
+	fmt.Println(timeNow.Location().String())
 }
