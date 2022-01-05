@@ -53,4 +53,12 @@ func main() {
 	fmt.Println(myName)
 	fmt.Println(countMyName)
 	fmt.Println(getFirstCharacter)
+	fmt.Println()
+	// kita tidak perlu mendefinisikan tipe data jika langsung define value nya
+	// seperti ini
+	var hobi = "Coding"
+	fmt.Println(hobi)
+
+	var age int = 60
+	fmt.Println(age)
 }
