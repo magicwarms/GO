@@ -41,4 +41,16 @@ func main() {
 	// Bisa dibilang variabel ini merupakan keranjang sampah.
 	satu, _ := 1, 2
 	fmt.Println(satu)
+
+	// di 2022
+	// menghitung jumlah string
+	var myName string = "Andhana Utama"
+
+	// start count
+	var countMyName int = len(myName)
+	var getFirstCharacter byte = myName[0]
+	fmt.Println()
+	fmt.Println(myName)
+	fmt.Println(countMyName)
+	fmt.Println(getFirstCharacter)
 }
