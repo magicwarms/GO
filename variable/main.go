@@ -61,4 +61,8 @@ func main() {
 
 	var age int = 60
 	fmt.Println(age)
+
+	// Motto paling mantap
+	var mottoMantap string = "sempardak"
+	fmt.Println(mottoMantap + " hehe")
 }
