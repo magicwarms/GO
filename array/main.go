@@ -8,14 +8,14 @@ func changeLocal(num [5]int) {
 
 }
 
-func printarray(a [3][2]string) {
-	for _, v1 := range a {
-		for _, v2 := range v1 {
-			fmt.Printf("%s ", v2)
-		}
-		fmt.Printf("\n")
-	}
-}
+// func printarray(a [3][2]string) {
+// 	for _, v1 := range a {
+// 		for _, v2 := range v1 {
+// 			fmt.Printf("%s ", v2)
+// 		}
+// 		fmt.Printf("\n")
+// 	}
+// }
 
 func subtactOne(numbers []int) {
 	for i := range numbers {
@@ -28,19 +28,23 @@ func main() {
 	// a[0] = 12
 	// a[1] = 14
 	// a[2] = 16
+	// a[3] = 18 <-- bakal error karna yang di deklarasi kan array nya hanya 3
 	// fmt.Println(a)
+	// fmt.Println("Length nya: ", len(a))
 
-	// other way define array
+	// another way define array
 	// a := [3]int{12, 14, 16}
-	// fmt.Println(a)
+	// fmt.Println(a[1])
 	// It is not necessary that all elements in an array have to be assigned a value during short hand declaration.
 	// a := [3]int{12} //kita define length nya 3, tapi kalo kita define 1 aja gak masalah
 	// fmt.Println(a)
 
-	// biarkan compiler yang cari length nya, pakai ini [...]
+	// biarkan golang code nya yang cari length nya, pakai ini [...]
 	// a := [...]int{12, 14, 16, 17}
 	// fmt.Println("data array \t:", a)
 	// fmt.Println("jumlah elemen \t:", len(a))
+	// a[3] = 18
+	// fmt.Println("Ganti data di dalam array 17 menjadi 18 \t:", a)
 
 	// a := [3]int{5, 78, 8}
 	// var b [4]int // ini cara deklarasi variable kalo gak ada value nya
@@ -57,12 +61,12 @@ func main() {
 
 	// num := [...]int{5, 6, 7, 8, 8}
 	// fmt.Println("before passing to function ", num) //original array
-	// changeLocal(num) //num is passed by value, walau sudah diganti dengan fx ini
-	// fmt.Println("after passing to function ", num) //original array gak bakal ke ganti tetep sama dia
+	// changeLocal(num)                                //num is passed by value, walau sudah diganti dengan fn ini
+	// fmt.Println("after passing to function ", num)  //original array gak bakal ke ganti tetep sama dia
 
 	// a := []float64{12.22, 17.24, 20.56, 80.44}
 	// fmt.Println("Size array nya berapa tuh: ", len(a)) //pakai function len kalo mau tahu size array nya berapa
-	// for i := 0; i < len(a); i++ { //looping from 0 to the length of the array
+	// for i := 0; i < len(a); i++ {                      //looping from 0 to the length of the array
 	// 	// fmt.Printf("%d th element of a is %.2f\n", i, a[i])
 	// 	fmt.Println("Element ke:", i, "Nilainya:", a[i])
 	// }
@@ -102,12 +106,15 @@ func main() {
 	// fmt.Println("numbers1", numbers1)
 	// fmt.Println("numbers2", numbers2)
 
-	// Alokasi Elemen Array Menggunakan Keyword
-	// fruits := make([]string, 2)
+	// buat slice pakai keyword make
+	// fruits := make([]string, 3)
 	// fruits[0] = "apple"
 	// fruits[1] = "manggo"
+	// fruits[2] = "kelentit"
 
-	// fmt.Println(fruits) // [apple manggo]
+	// fmt.Println(fruits) // [apple manggo kelentit]
+	// fmt.Println("Length nya: ", len(fruits))
+	// fmt.Println("Capacity nya: ", cap(fruits))
 
 	// slices in Go Lang
 	// ngambil data tertentu di sebuah array
@@ -119,9 +126,38 @@ func main() {
 	// c := []int{6, 7, 8} //creates and array and returns a slice reference
 	// fmt.Println(c)
 
+	// months := [...]string{
+	// 	"January",
+	// 	"February",
+	// 	"March",
+	// 	"April",
+	// 	"May",
+	// 	"June",
+	// 	"July",
+	// 	"August",
+	// 	"September",
+	// 	"October",
+	// 	"November",
+	// 	"December",
+	// }
+
+	// slice1 := months[4:7]
+	// fmt.Println(slice1)
+	// fmt.Println("Length nya: ", len(slice1))
+	// fmt.Println("Kapasitasnya: ", cap(slice1))
+	// // saat rubah slice terubah juga array nya, nih contoh nya
+	// // detail penjelasan:
+	// // Slices tidak memiliki data sendiri. Ini hanyalah representasi dari array yang mendasarinya. Setiap modifikasi yang dilakukan pada slice akan tercermin dalam array yang mendasarinya.
+
+	// //ubah slice nih dari May ke May Once
+	// slice1[0] = "May Once"
+
+	// fmt.Println("ubah slice: ", slice1)
+	// // array of months nya juga terubah
+	// fmt.Println("Updated months: ", months)
+
 	// starting array 0 and end with n - 1
 
-	// Slices tidak memiliki data sendiri. Ini hanyalah representasi dari array yang mendasarinya. Setiap modifikasi yang dilakukan pada slice akan tercermin dalam array yang mendasarinya.
 	// darr := []int{57, 89, 90, 82, 100, 78, 67, 69, 59}
 	// fmt.Println("array before", darr)
 	// dslice := darr[2:5]
@@ -178,14 +214,14 @@ func main() {
 	// fmt.Println(cap(fruitsA)) // 3
 
 	// learn copy slices
-	dst := []string{"potato", "potato", "potato"}
-	src := []string{"watermelon", "pinnaple", "orange", "banana"}
-	dst = append(dst, "kiwi")
-	n := copy(dst, src)
+	// this source that we want to copy
+	source := []string{"watermelon", "pinnaple", "orange", "banana"}
+	// and define empty slice
+	destination := make([]string, len(source), cap(source))
+	copy(destination, source)
 
-	fmt.Println(dst) // watermelon pinnaple potato
-	fmt.Println(src) // watermelon pinnaple
-	fmt.Println(n)   // 2
+	fmt.Println(source)      // watermelon pinnaple
+	fmt.Println(destination) // watermelon pinnaple
 
 	// lala := []string{} // deklarasi variabel array
 	// fmt.Println(len(lala))
