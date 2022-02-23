@@ -1,2 +1,2 @@
 # GO
-One of my planning in 2021 is learning Go-Lang, stay tuned and keep spirit!
+One of my plan in 2022 is learn Go-Lang, stay tuned and keep spirit!
