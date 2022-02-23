@@ -1,12 +1,9 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func calculateNumber() int {
-	num := 9 * 5
-	return num
+func calculateNumber(number1 int, number2 int) int {
+	return number1 * number2
 }
 
 func main() {
@@ -69,15 +66,15 @@ func main() {
 
 	//jadi fallthrough ini akan selalu eksekusi code dibawah nya walaupun kondisi nya itu false/true
 	//hati-hati pakai fallthrough ini, kalo bisa hindari pakai nya
-	nilai := 19
-	switch {
-	case nilai < 18:
-		fmt.Println("Anda masih", nilai, "tahun dan anda tidak diperbolehkan masuk")
-	case nilai >= 18 && nilai <= 20:
-		fmt.Println("Anda sudah", nilai, "tahun dan anda diperbolehkan masuk")
-	default:
-		fmt.Println("Anda sudah tua cuk!")
-	}
+	// 	nilai := 19
+	// 	switch {
+	// 	case nilai < 18:
+	// 		fmt.Println("Anda masih", nilai, "tahun dan anda tidak diperbolehkan masuk")
+	// 	case nilai >= 18 && nilai <= 20:
+	// 		fmt.Println("Anda sudah", nilai, "tahun dan anda diperbolehkan masuk")
+	// 	default:
+	// 		fmt.Println("Anda sudah tua cuk!")
+	// 	}
 	// randloop:
 	// 	for {
 	// 		i := rand.Intn(100)
@@ -88,5 +85,14 @@ func main() {
 	// 			break randloop
 	// 		}
 	// 	}
+
+	// coba dari udemy
+	numberMark := calculateNumber(6, 5)
+	switch {
+	case numberMark >= 30:
+		fmt.Println("Nilai nya:", numberMark)
+	case numberMark <= 30:
+		fmt.Println("Kurang dari 30:", numberMark)
+	}
 
 }
