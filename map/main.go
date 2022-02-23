@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// var month map[string]int
 	// month = map[string]int{}
@@ -85,4 +87,32 @@ func main() {
 	// for _, chicken := range chickens {
 	// 	fmt.Println(chicken["gender"], chicken["name"], chicken["address"])
 	// }
+
+	// belajar dari udemy
+	// urutan map[string] nya sesuai abjad
+	person := map[string]string{
+		"name":    "Andhana",
+		"address": "Tiban",
+		"oli":     "Top 1",
+		"bising":  "tidak",
+	}
+
+	fmt.Println(person)
+	fmt.Println(person["address"])
+
+	person["name"] = "Naura"
+
+	fmt.Println(person)
+	fmt.Println(len(person))
+
+	delete(person, "oli")
+	fmt.Println(person)
+
+	value, isExist := person["address"]
+
+	if isExist {
+		fmt.Println("ada kok value nya: ", value)
+	} else {
+		fmt.Println("gak ada")
+	}
 }
