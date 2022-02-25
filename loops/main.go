@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// variable yang ada di dalam loop gak bisa dipakai di luar loop
 	// for i := 1; i <= 10; i++ {
@@ -50,4 +52,26 @@ func main() {
 	// 		break
 	// 	}
 	// }
+	// counter := 1
+	// for counter <= 10 {
+	// 	fmt.Println(counter)
+	// 	counter++
+	// }
+
+	// di for loop ada short statement
+	// seperti dibawah ini
+	// for counter := 1; counter <= 10; counter++ {
+	// 	fmt.Println("Keberapa nih", counter)
+	// }
+
+	// cobain iterasi slice
+	sliceData := []string{"Andhana", "Mahrani", "Naura", "Elmira"}
+	// for i := 0; i < len(sliceData); i++ {
+	// 	fmt.Println(sliceData[i])
+	// }
+
+	// cobain for range untuk iterasi slice
+	for index, value := range sliceData {
+		fmt.Println("Index ke:", index, "value nya:", value)
+	}
 }
