@@ -28,6 +28,7 @@ func main() {
 	// numbers := []int{2, 4, 3, 5, 4, 3, 3, 5, 5, 3}
 	// totalNumber, averageNumber := calculate(numbers...)
 	// cara atas sama bawah sama aja
+	// cuman ada 1 perbedaan, kalo slice mesti kasih titik 3x di belakang variable nya
 	totalNumber, averageNumber := calculate(2, 4, 3, 5, 4, 3, 3, 5, 5, 3)
 	fmt.Println(averageNumber, totalNumber)
 
