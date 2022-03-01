@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // parameter dan return type adalah optional di go lang function
 // func calculateBill(qty int, price int) int {
 // 	total := qty * price
@@ -46,12 +48,30 @@ package main
 // 	fmt.Println("Hallo Wak!", angkaKe)
 // }
 
-func getHello(name string) string {
-	println(name)
-	if name == "" {
-		return "Hallo wak"
+// func getHello(name string) string {
+// 	println(name)
+// 	if name == "" {
+// 		return "Hallo wak"
+// 	} else {
+// 		return "Hallo " + name
+// 	}
+// }
+
+// type dibawah adalah type declarations, untuk mempersingkat membuat function as parameter
+type Filter func(string) string
+
+// sebelum nya seperti ini
+// func sayHelloWithFilter(name string, spamFilter func(string) string) {
+func sayHelloWithFilter(name string, spamFilter Filter) {
+	nameFiltered := spamFilter(name)
+	fmt.Println("hello", nameFiltered)
+}
+
+func spamFilter(name string) string {
+	if name == "Anjing" {
+		return "..."
 	} else {
-		return "Hallo " + name
+		return name
 	}
 }
 
@@ -77,5 +97,9 @@ func main() {
 
 	// result := getHello("")
 	// fmt.Println(result)
+
+	// function as parameter
+	// sayHelloWithFilter("Andhana", spamFilter)
+	// sayHelloWithFilter("Anjing", spamFilter)
 
 }
