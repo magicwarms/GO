@@ -3,23 +3,22 @@ package main
 import (
 	"errors"
 	"fmt"
-	"strings"
 )
 
-func validate(input string) (bool, error) {
-	if strings.TrimSpace(input) == "" {
-		return false, errors.New("cannot be empty")
-	}
-	return true, nil
-}
+// func validate(input string) (bool, error) {
+// 	if strings.TrimSpace(input) == "" {
+// 		return false, errors.New("input cannot be empty")
+// 	}
+// 	return true, nil
+// }
 
-func catch() {
-	if r := recover(); r != nil {
-		fmt.Println("Error occured", r)
-	} else {
-		fmt.Println("Application running perfectly")
-	}
-}
+// func catch() {
+// 	if r := recover(); r != nil {
+// 		fmt.Println("Error occured", r)
+// 	} else {
+// 		fmt.Println("Application running perfectly")
+// 	}
+// }
 
 func main() {
 	// var input string
@@ -35,14 +34,32 @@ func main() {
 	// 	fmt.Println(input, "is not number")
 	// 	fmt.Println(err.Error())
 	// }
-	defer catch()
-	var name string
-	fmt.Print("Type your name: ")
-	fmt.Scanln(&name)
+	// defer catch()
+	// var name string
+	// fmt.Print("Type your name: ")
+	// fmt.Scanln(&name)
 
-	if valid, err := validate(name); valid {
-		fmt.Println("halo", name)
+	// if valid, err := validate(name); valid {
+	// 	fmt.Println("halo", name)
+	// } else {
+	// 	panic(err.Error())
+	// }
+
+	// contohError := errors.New("opps, error wak")
+	// fmt.Println(contohError)
+
+	hasil, err := pembagian(100, 0)
+	if err != nil {
+		fmt.Println(err.Error())
 	} else {
-		panic(err.Error())
+		fmt.Println(hasil)
 	}
+
+}
+
+func pembagian(nilai int, pembagi int) (int, error) {
+	if pembagi == 0 {
+		return 0, errors.New("pembagi tidak boleh 0")
+	}
+	return nilai / pembagi, nil
 }

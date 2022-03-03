@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // parameter dan return type adalah optional di go lang function
 // func calculateBill(qty int, price int) int {
 // 	total := qty * price
@@ -59,21 +57,38 @@ import "fmt"
 
 // type dibawah adalah type declarations, untuk mempersingkat membuat function as parameter
 type Filter func(string) string
+type Blacklist func(string) bool
 
 // sebelum nya seperti ini
 // func sayHelloWithFilter(name string, spamFilter func(string) string) {
-func sayHelloWithFilter(name string, spamFilter Filter) {
-	nameFiltered := spamFilter(name)
-	fmt.Println("hello", nameFiltered)
-}
+// jadi sperti ini
+// func sayHelloWithFilter(name string, spamFilter Filter) {
+// 	nameFiltered := spamFilter(name)
+// 	fmt.Println("hello", nameFiltered)
+// }
 
-func spamFilter(name string) string {
-	if name == "Anjing" {
-		return "..."
-	} else {
-		return name
-	}
-}
+// func spamFilter(name string) string {
+// 	if name == "Anjing" {
+// 		return "..."
+// 	} else {
+// 		return name
+// 	}
+// }
+
+// func registerUser(name string, blacklist Blacklist) string {
+// 	if blacklist(name) {
+// 		return "You are blocked " + name
+// 	} else {
+// 		return "Hi user " + name
+// 	}
+// }
+
+// func factorialRecursive(value int) int {
+// 	if value == 1 {
+// 		return value
+// 	}
+// 	return value * factorialRecursive(value-1)
+// }
 
 func main() {
 	// qty, price := 2, 2000
@@ -102,4 +117,15 @@ func main() {
 	// sayHelloWithFilter("Andhana", spamFilter)
 	// sayHelloWithFilter("Anjing", spamFilter)
 
+	// anonymous function
+	// blacklist := func(name string) bool {
+	// 	return name == "admin"
+	// }
+	// registerUserData := registerUser("andhana", blacklist)
+	// registerUserDataBlack := registerUser("admin", blacklist)
+
+	// fmt.Println(registerUserData, registerUserDataBlack)
+
+	// recursive function
+	// fmt.Println(factorialRecursive(5))
 }

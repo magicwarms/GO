@@ -12,13 +12,13 @@ func main() {
 	// }
 	// fmt.Println("Line ini dieksekusi setelah looping")
 
-	// for i := 1; i <= 10; i++ {
-	// 	if i%2 == 0 { // odd number bilangan genap
-	// 		continue // untuk continue looping
-	// 	}
-	// 	fmt.Println("Nomor berapa nih: ", i)
-	// }
-	// fmt.Println("Line ini dieksekusi setelah looping continue")
+	for i := 1; i <= 10; i++ {
+		if i%2 != 0 { // odd number bilangan genap
+			continue // untuk continue looping
+		}
+		fmt.Println("Angka Genap berapa nih: ", i)
+	}
+	fmt.Println("Line ini dieksekusi setelah looping continue")
 
 	// // other way to write loop fx
 	// i := 1
@@ -65,13 +65,13 @@ func main() {
 	// }
 
 	// cobain iterasi slice
-	sliceData := []string{"Andhana", "Mahrani", "Naura", "Elmira"}
+	// sliceData := []string{"Andhana", "Mahrani", "Naura", "Elmira"}
 	// for i := 0; i < len(sliceData); i++ {
 	// 	fmt.Println(sliceData[i])
 	// }
 
 	// cobain for range untuk iterasi slice
-	for index, value := range sliceData {
-		fmt.Println("Index ke:", index, "value nya:", value)
-	}
+	// for index, value := range sliceData {
+	// 	fmt.Println("Index ke:", index, "value nya:", value)
+	// }
 }
