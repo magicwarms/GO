@@ -80,3 +80,37 @@ func TestSubTest(t *testing.T) {
 		require.Equal(t, "Halo wak Blontok", result, "Result must be 'Halo wak Blontok'")
 	})
 }
+
+// cobain konsep table test
+// konsep ini memudahkan kita untuk mengetest beberapa functions dengan cara iterasi
+
+func TestHelloWorldTable(t *testing.T) {
+	testsTable := []struct {
+		name     string
+		request  string
+		expected string
+	}{
+		{
+			name:     "HelloWorld(Bulan)",
+			request:  "Bulan",
+			expected: "Halo wak Bulan",
+		},
+		{
+			name:     "HelloWorld(Matahari)",
+			request:  "Matahari",
+			expected: "Halo wak Matahari",
+		},
+		{
+			name:     "HelloWorld(Dunias)",
+			request:  "Dunias",
+			expected: "Halo wak Dunia",
+		},
+	}
+
+	for _, test := range testsTable {
+		t.Run(test.name, func(t *testing.T) {
+			result := HelloWorld(test.request)
+			assert.Equal(t, test.expected, result, "Result must be "+test.expected)
+		})
+	}
+}
