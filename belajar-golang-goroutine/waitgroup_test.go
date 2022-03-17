@@ -6,9 +6,10 @@ import (
 	"testing"
 )
 
-// sync.WaitGroup ini nih kayak tunggu process goroutine selesai
+// sync.WaitGroup ini nih kayak tunggu process semua goroutine selesai
 
 func RunAsynchronous(group *sync.WaitGroup, counter int) {
+	// wajib di kasih group.Done()
 	defer group.Done()
 
 	group.Add(1)
