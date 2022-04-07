@@ -23,7 +23,7 @@ func TestPool(t *testing.T) {
 		go func() {
 			data := pool.Get()
 			fmt.Println(data)
-			pool.Put(data)
+			// pool.Put(data)
 		}()
 	}
 

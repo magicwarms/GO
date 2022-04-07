@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 type human struct {
 	head string
@@ -24,6 +26,10 @@ type Customer struct {
 	Age           int
 }
 
+func (customer Customer) sayHello(name string) {
+	log.Println("Hello", customer.Name, "My name is ", name)
+}
+
 func main() {
 	// Struct adalah kumpulan definisi variabel (atau property) dan atau fungsi (atau method),
 	// yang dibungkus sebagai tipe data baru dengan nama tertentu.
@@ -40,16 +46,16 @@ func main() {
 	// cara LAIN inisialisasi struct
 	// people2 := human{"Kalapa", "Tungun", "Kaki", 2}
 	// pakai cara yang dibawah kayak nya lebih enak
-	people3 := human{
-		head: "jason",
-		hand: "Tingkak",
-		foot: "Kakii",
-		eyes: 1,
-	}
+	// people3 := human{
+	// 	head: "jason",
+	// 	hand: "Tingkak",
+	// 	foot: "Kakii",
+	// 	eyes: 1,
+	// }
 
 	// fmt.Println("human 1 :", people.eyes )
 	// fmt.Println("human 2 :", people2.head)
-	fmt.Println("human 3 :", people3)
+	// fmt.Println("human 3 :", people3)
 
 	// var s1 = student{}
 	// s1.name = "wick"
@@ -62,11 +68,15 @@ func main() {
 	// fmt.Println("age   :", s1.person.age)
 	// fmt.Println("grade :", s1.grade)
 
-	// var customerData Customer
+	var customerData Customer
 
-	// customerData.Name = "Andhana"
-	// customerData.Address = "Batam"
-	// customerData.Age = 30
+	customerData.Name = "Andhana"
+	customerData.Address = "Batam"
+	customerData.Age = 30
 
 	// fmt.Println(customerData)
+
+	// STRUCT METHOD/FUNCTION
+	customerData.sayHello("Jin")
+
 }
