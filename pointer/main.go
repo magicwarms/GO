@@ -1,17 +1,27 @@
 package main
 
-import "fmt"
-
 type Address struct {
 	City, Province, Country string
 }
 
+type Person struct {
+	Name, Address string
+}
+
 // kalau mau terganti data nya, pakai cara seperti ini menggunakan tanda pointer *
-func changeAddressCountryToIndonesia(address *Address) {
-	// func changeAddressCountryToIndonesia(address Address) {
-	address.Country = "Indonesia"
-	// yang berubah data nya cuman scope di function ini saja
-	// fmt.Println(address)
+// func changeAddressCountryToIndonesia(address *Address) {
+// 	// func changeAddressCountryToIndonesia(address Address) {
+// 	address.Country = "Indonesia"
+// 	// yang berubah data nya cuman scope di function ini saja
+// 	// fmt.Println(address)
+// }
+
+func ChangeName(person *Person, name string) {
+	person.Name = "Manusia ini adalah " + name + ","
+}
+
+func (person Person) sayBapak() {
+	person.Name = "Bapak " + person.Name
 }
 
 func main() {
@@ -58,15 +68,41 @@ func main() {
 	// fmt.Println(address2)
 
 	// pointer di function
-	var address1 Address = Address{
-		City:     "Jakarta",
-		Province: "DKI Jakarta",
-		Country:  "England",
-	}
+	// var address1 Address = Address{
+	// 	City:     "Jakarta",
+	// 	Province: "DKI Jakarta",
+	// 	Country:  "England",
+	// }
 	// nah kalo ditambah tanda & <-- pointer baru berubah dia
-	changeAddressCountryToIndonesia(&address1)
-	fmt.Println(address1)
+	// changeAddressCountryToIndonesia(&address1)
+	// fmt.Println(address1)
 	// dibawah ini data nya tetep saja tak berubah, karna pass by value
 	// changeAddressCountryToIndonesia(address1)
 	// fmt.Println(address1)
+
+	// person1 := Person{"Andhana", "Villa"}
+
+	// person2 := &person1
+	// atas dan bawah sama aja pendeklarasian variable nya
+	// var person2 *Person = &person1
+
+	// person2.Name = "Sempardak"
+
+	// log.Println(person1)
+	// log.Println(person2)
+	// ini pointer di parameter function
+	// person3 := Person{
+	// 	Address: "Dunia alam bawah sadar - Lucid dream",
+	// }
+	// ChangeName(&person3, "Jumanji")
+	// log.Println(person3)
+
+	// INI POINTER DI METHOD
+	// person4 := Person{
+	// 	Address: "Sei Harapan",
+	// 	Name:    "Jumadi",
+	// }
+	// person4.sayBapak()
+
+	// log.Println(person4)
 }
