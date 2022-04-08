@@ -10,8 +10,9 @@ import (
 
 func RunAsynchronous(group *sync.WaitGroup, counter int) {
 	// wajib di kasih group.Done()
+	// kurangin 1 goroutine -1
 	defer group.Done()
-
+	//add 1 goroutine +1
 	group.Add(1)
 
 	fmt.Println("Hello", counter)
@@ -22,7 +23,7 @@ func RunAsynchronous(group *sync.WaitGroup, counter int) {
 func TestWaitGroup(t *testing.T) {
 	group := &sync.WaitGroup{}
 
-	for i := 0; i < 100; i++ {
+	for i := 1; i <= 100; i++ {
 		go RunAsynchronous(group, i)
 	}
 
