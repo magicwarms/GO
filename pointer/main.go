@@ -1,11 +1,18 @@
 package main
 
+import "log"
+
 type Address struct {
 	City, Province, Country string
 }
 
 type Person struct {
 	Name, Address string
+}
+
+type Animal struct {
+	Nama    string
+	Berkaki int64
 }
 
 // kalau mau terganti data nya, pakai cara seperti ini menggunakan tanda pointer *
@@ -16,13 +23,26 @@ type Person struct {
 // 	// fmt.Println(address)
 // }
 
-func ChangeName(person *Person, name string) {
-	person.Name = "Manusia ini adalah " + name + ","
-}
+// func ChangeName(person *Person, name string) {
+// 	person.Name = "Manusia ini adalah " + name + ","
+// }
 
-func (person Person) sayBapak() {
-	person.Name = "Bapak " + person.Name
-}
+// func (person *Person) sayBapak() {
+// 	person.Name = "Bapak " + person.Name
+// }
+
+// func changeBerkakiTo4(animal *Animal) {
+// 	animal.Berkaki = 4
+// }
+
+// func (animal *Animal) changeBerkakiTo4PointerDiMethod() {
+// 	animal.Berkaki = 4
+// 	animalName := "Default"
+// 	if animal.Nama != "" {
+// 		animalName = animal.Nama
+// 	}
+// 	animal.Nama = "ini apa? " + " ini " + animalName
+// }
 
 func main() {
 	// Pointer adalah reference atau alamat memori. Variabel pointer berarti variabel yang berisi alamat memori suatu nilai. Sebagai contoh sebuah variabel bertipe integer memiliki nilai 4, maka yang dimaksud pointer adalah alamat memori dimana nilai 4 disimpan, bukan nilai 4 itu sendiri.
@@ -105,4 +125,27 @@ func main() {
 	// person4.sayBapak()
 
 	// log.Println(person4)
+
+	// BELAJAR LAGI
+	animal1 := Animal{
+		Nama:    "Kucing",
+		Berkaki: 3,
+	}
+	animal2 := &animal1
+
+	animal1.Berkaki = 4
+	// animal2.Berkaki = 4
+	// changeBerkakiTo4(&animal1)
+	// changeBerkakiTo4(&animal2)
+	// animal1.changeBerkakiTo4PointerDiMethod()
+	// animal2.changeBerkakiTo4PointerDiMethod()
+
+	// animalBaru := &Animal{}
+	// animalBaru.Nama = "Serigala"
+	// animalBaru.changeBerkakiTo4PointerDiMethod()
+
+	log.Println(animal1)
+	log.Println(animal2)
+
+	// log.Println(animalBaru)
 }
