@@ -9,7 +9,7 @@ import (
 
 // package atomic ini untuk mengelola data primitif seperti number, string
 // bisa pakai package atomic ini
-// gak usah pakai mutex lock di file race_condition_text.go
+// gak usah pakai mutex lock di file race_condition_test.go
 func TestAtomic(t *testing.T) {
 	var x int64 = 0
 	group := sync.WaitGroup{}

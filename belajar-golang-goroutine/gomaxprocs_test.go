@@ -11,7 +11,7 @@ func TestGoMaxProcs(t *testing.T) {
 	log.Println("Total CPU:", totalCPU)
 	// ini untuk mengubah thread
 	// tak usah diubah gomaxprocs karna default nya sudah optimal
-	runtime.GOMAXPROCS(20) // <-- tak usah diubah-ubah ini
+	// runtime.GOMAXPROCS(20) // <-- tak usah diubah-ubah ini
 	totalThread := runtime.GOMAXPROCS(-1)
 	log.Println("Total Thread:", totalThread)
 
